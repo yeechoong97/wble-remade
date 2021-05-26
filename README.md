@@ -1,4 +1,8 @@
-<p align="center"><a href="https://https://wble.utar.edu.my/" target="_blank"><img src="https://wble.utar.edu.my/WBLE30042020.jpg"></a></p>
+<p align="center">
+    <a href="https://wble.utar.edu.my/" target="_blank">
+        <img src="https://e-learning.utar.edu.my/images/1588686268074.png?n=1588686268591set" width="400">
+    </a>
+</p>
 
 ## About Wble Remade
 
