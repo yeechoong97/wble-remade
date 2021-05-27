@@ -15,8 +15,10 @@ class CourseController extends Controller
     public function index()
     {
         //
-        $allCourses = Course::all();
-        
+        // $allCourses = Course::all();
+        $course = Course::find(1)->student;
+        dd($course);
+
         return response()->json($allCourses, 200);
         
     }
