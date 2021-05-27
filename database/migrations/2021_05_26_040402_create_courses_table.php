@@ -18,6 +18,9 @@ class CreateCoursesTable extends Migration
             $table->id();
             $table->string("name");
             $table->string("code");
+            $table->Integer("janIntake");
+            $table->Integer("mayIntake");
+            $table->Integer("octIntake");
             $table->timestamps();
         });
     }
