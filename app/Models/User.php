@@ -17,11 +17,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'userID',
-        'name',
-        'email',
+        'username',
         'password',
-        'role',
     ];
     /**
      * The attributes that should be hidden for arrays.
@@ -42,8 +39,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function course()
-    {
-        return $this->belongsToMany(Course::class,'course_user','user_id','course_id');
-    }
+    // public function course()
+    // {
+    //     return $this->belongsToMany(Course::class,'course_user','user_id','course_id');
+    // }
 }

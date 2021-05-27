@@ -11,11 +11,14 @@ class Course extends Model
 
     protected $fillable = [
         'name',
-        "code"
+        'code',
+        'janIntake',
+        'mayIntake',
+        'octIntake'
     ];
 
-    public function student()
-    {
-        return $this->belongsToMany(User::class,'course_user','course_id','user_id');
-    }
+    // public function student()
+    // {
+    //     return $this->belongsToMany(User::class,'course_user','course_id','user_id');
+    // }
 }
