@@ -4,20 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Course;
+use App\Models\Student;
+use App\Models\Lecturer;
 
-class CourseController extends Controller
+class CourseClassController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
-        $allCourses = Course::all();
-        return response()->json($allCourses, 200);
-        
+        $intake = (strtolower($request->intake))."Intake";
+        $courses = Course::where($intake,1)->get();
+        $student = Student::all();
+        $lecturer = Lecturer::all();
+        return response()->json([$courses,$student,$lecturer], 200);
+
     }
 
     /**
@@ -28,7 +32,6 @@ class CourseController extends Controller
     public function create()
     {
         //
-        
     }
 
     /**
@@ -40,12 +43,6 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         //
-        $course = Course::create([
-            'name' => $request->courseName,
-            'code' => $request->courseCode,
-        ]);
-
-        return response()->json('success', 200);
     }
 
     /**
@@ -57,8 +54,6 @@ class CourseController extends Controller
     public function show($id)
     {
         //
-        $course = Course::findOrFail($id);
-        return response()->json($course, 200);
     }
 
     /**

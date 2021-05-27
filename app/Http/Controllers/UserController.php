@@ -12,9 +12,6 @@ class UserController extends Controller
     //
 
     public function index() {
-        $user = User::find(1)->course;
-        dd($user);
-
         return User::all();
     }
 
