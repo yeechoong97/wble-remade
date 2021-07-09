@@ -4,6 +4,7 @@ import {BrowserRouter as Router} from 'react-router-dom';
 import {Route,Switch} from 'react-router-dom';
 import CourseIndex from './course/index';
 import CourseCreate from './course/create';
+import CourseEdit from './course/edit';
 
 function App() {
     return (
@@ -12,6 +13,7 @@ function App() {
                 <Switch>
                     <Route exact path ="/" component={CourseIndex}/>
                     <Route path="/create" component={CourseCreate}/>
+                    <Route path="/:id" component={CourseEdit}/>
                 </Switch>
             </>
         </Router>

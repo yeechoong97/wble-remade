@@ -1,13 +1,15 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
+import { useParams } from 'react-router-dom';
 import FormComponents from './form_components';
 
-function CourseCreate(){
+function CourseEdit(){
 
+    const {id} = useParams();
     const [courseCode,setCourseCode] = useState("");
     const [courseName,setCourseName] = useState("");
-    const [janIntake,setjanIntake] = useState(false);
-    const [mayIntake,setmayIntake] = useState(false);
-    const [octIntake,setoctIntake] = useState(false);
+    const [janIntake,setjanIntake] = useState(null);
+    const [mayIntake,setmayIntake] = useState(null);
+    const [octIntake,setoctIntake] = useState(null);
     const course = {
         'name' : courseName,
         'code' : courseCode,
@@ -18,9 +20,8 @@ function CourseCreate(){
 
     async function submitForm(event){
         event.preventDefault();
- 
         const requestOptions ={
-            method: 'POST',
+            method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
                 'name' : courseName,
@@ -31,11 +32,11 @@ function CourseCreate(){
             })
         };
 
-        await fetch("api/courses",requestOptions)
+        await fetch(`api/courses/${id}`,requestOptions)
         .then((response)=>{
             if(response.status == 200)
             {
-                alert("Course Created Successfully");
+                alert("Course Updated Successfully");
                 window.location = '/';
             }
         })
@@ -43,6 +44,23 @@ function CourseCreate(){
             console.log(error);
         });        
     };
+
+    function retrieveData(){
+        fetch(`api/courses/${id}`)
+        .then((response)=> response.json())
+        .then((response)=> {
+            setCourseCode(response.code);
+            setCourseName(response.name);
+            setjanIntake(response.janIntake == 1 ? true : false);
+            setmayIntake(response.mayIntake == 1 ? true : false);
+            setoctIntake(response.octIntake == 1 ? true : false);
+        });
+
+    }
+
+    useEffect(()=>{
+        retrieveData();
+    },[]);
 
 
     return(
@@ -60,4 +78,4 @@ function CourseCreate(){
 
 }
 
-export default CourseCreate;
+export default CourseEdit;

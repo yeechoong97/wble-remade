@@ -15,7 +15,7 @@ class CourseController extends Controller
     public function index()
     {
         //
-        $allCourses = Course::all();
+        $allCourses = Course::orderBy('name','asc')->get();
         return response()->json($allCourses, 200);
         
     }
@@ -28,6 +28,7 @@ class CourseController extends Controller
     public function create()
     {
         //
+
         
     }
 
@@ -41,8 +42,11 @@ class CourseController extends Controller
     {
         //
         $course = Course::create([
-            'name' => $request->courseName,
-            'code' => $request->courseCode,
+            'name' => $request->name,
+            'code' => $request->code,
+            'janIntake'=> $request->janIntake,
+            'mayIntake'=> $request->mayIntake,
+            'octIntake'=> $request->octIntake,
         ]);
 
         return response()->json('success', 200);
@@ -81,7 +85,10 @@ class CourseController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $course = Course::findOrFail($id);
+        $course->fill($request->all());
+        $course->save();
+        return response()->json('success',200);
     }
 
     /**
@@ -92,6 +99,8 @@ class CourseController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $course = Course::find($id);
+        $course->delete();
+        return response()->json('success',200);
     }
 }
