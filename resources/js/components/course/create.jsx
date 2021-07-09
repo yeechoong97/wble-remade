@@ -31,12 +31,12 @@ function CourseCreate(){
             })
         };
 
-        await fetch("api/courses",requestOptions)
+        await fetch("http://127.0.0.1:8000/api/courses",requestOptions)
         .then((response)=>{
             if(response.status == 200)
             {
                 alert("Course Created Successfully");
-                window.location = '/';
+                window.location = '/course';
             }
         })
         .catch((error)=>{

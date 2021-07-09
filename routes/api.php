@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CourseClassController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,5 +29,5 @@ Route::delete('user/{id}', [UserController::class, 'destroy']);
 
 Route::resource('class',CourseClassController::class);
 Route::resource('courses', CourseController::class);
-
+Route::resource('students',StudentController::class);
 

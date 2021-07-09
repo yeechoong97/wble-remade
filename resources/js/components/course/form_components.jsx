@@ -28,7 +28,7 @@ function FormComponents({submitForm,course,setCourseCode,setCourseName,setjanInt
                 </div>
             </div>
             <div className="px-5 py-3">
-                <a href="/" className="btn btn-success mx-3">Back</a>
+                <a href="/course" className="btn btn-success mx-3">Back</a>
                 <button type="submit" className="btn btn-primary">Submit</button>
             </div>
             </form>

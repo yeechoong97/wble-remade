@@ -32,12 +32,12 @@ function CourseEdit(){
             })
         };
 
-        await fetch(`api/courses/${id}`,requestOptions)
+        await fetch(`http://127.0.0.1:8000/api/courses/${id}`,requestOptions)
         .then((response)=>{
             if(response.status == 200)
             {
                 alert("Course Updated Successfully");
-                window.location = '/';
+                window.location = '/course';
             }
         })
         .catch((error)=>{
@@ -46,7 +46,7 @@ function CourseEdit(){
     };
 
     function retrieveData(){
-        fetch(`api/courses/${id}`)
+        fetch(`http://127.0.0.1:8000/api/courses/${id}`)
         .then((response)=> response.json())
         .then((response)=> {
             setCourseCode(response.code);
