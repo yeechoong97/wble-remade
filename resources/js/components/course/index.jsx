@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-
+const apiLink = "http://127.0.0.1:8000/api";
 function CourseIndex() {
 
         const [courses,setCourse] = useState([]);
@@ -24,7 +24,7 @@ function CourseIndex() {
                 method: 'DELETE',
             };
     
-            await fetch(`http://127.0.0.1:8000/api/courses/${id}`,requestOptions)
+            await fetch(`${apiLink}/courses/${id}`,requestOptions)
             .then((response)=>{
                 if(response.status == 200)
                 {

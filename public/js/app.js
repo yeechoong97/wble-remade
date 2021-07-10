@@ -2185,15 +2185,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _NavMenu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./NavMenu */ "./resources/js/components/NavMenu.jsx");
 /* harmony import */ var _course_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./course/index */ "./resources/js/components/course/index.jsx");
 /* harmony import */ var _course_create__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./course/create */ "./resources/js/components/course/create.jsx");
 /* harmony import */ var _course_edit__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./course/edit */ "./resources/js/components/course/edit.jsx");
 /* harmony import */ var _student_index__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./student/index */ "./resources/js/components/student/index.jsx");
 /* harmony import */ var _student_create__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./student/create */ "./resources/js/components/student/create.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _student_edit__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./student/edit */ "./resources/js/components/student/edit.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -2208,29 +2210,33 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function App() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_9__.BrowserRouter, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.Fragment, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_NavMenu__WEBPACK_IMPORTED_MODULE_2__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Switch, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.BrowserRouter, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_NavMenu__WEBPACK_IMPORTED_MODULE_2__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Switch, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
           exact: true,
           path: "/course",
           component: _course_index__WEBPACK_IMPORTED_MODULE_3__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
           exact: true,
           path: "/course/create",
           component: _course_create__WEBPACK_IMPORTED_MODULE_4__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
           exact: true,
           path: "/course/:id",
           component: _course_edit__WEBPACK_IMPORTED_MODULE_5__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
           exact: true,
           path: "/student",
           component: _student_index__WEBPACK_IMPORTED_MODULE_6__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_10__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
           exact: true,
           path: "/student/create",
           component: _student_create__WEBPACK_IMPORTED_MODULE_7__.default
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_11__.Route, {
+          exact: true,
+          path: "/student/:id",
+          component: _student_edit__WEBPACK_IMPORTED_MODULE_8__.default
         })]
       })]
     })
@@ -2240,8 +2246,8 @@ function App() {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
 
 if (document.getElementById('example')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.StrictMode, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(App, {})
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.StrictMode, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(App, {})
   }), document.getElementById('example'));
 }
 
@@ -2344,6 +2350,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+var apiLink = "http://127.0.0.1:8000/api";
 
 function CourseCreate() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
@@ -2405,7 +2412,7 @@ function CourseCreate() {
                 })
               };
               _context.next = 4;
-              return fetch("http://127.0.0.1:8000/api/courses", requestOptions).then(function (response) {
+              return fetch("".concat(apiLink, "/courses"), requestOptions).then(function (response) {
                 if (response.status == 200) {
                   alert("Course Created Successfully");
                   window.location = '/course';
@@ -2479,6 +2486,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+var apiLink = "http://127.0.0.1:8000/api";
 
 function CourseEdit() {
   var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useParams)(),
@@ -2543,7 +2551,7 @@ function CourseEdit() {
                 })
               };
               _context.next = 4;
-              return fetch("http://127.0.0.1:8000/api/courses/".concat(id), requestOptions).then(function (response) {
+              return fetch("".concat(apiLink, "/courses/").concat(id), requestOptions).then(function (response) {
                 if (response.status == 200) {
                   alert("Course Updated Successfully");
                   window.location = '/course';
@@ -2565,7 +2573,7 @@ function CourseEdit() {
   ;
 
   function retrieveData() {
-    fetch("http://127.0.0.1:8000/api/courses/".concat(id)).then(function (response) {
+    fetch("".concat(apiLink, "/courses/").concat(id)).then(function (response) {
       return response.json();
     }).then(function (response) {
       setCourseCode(response.code);
@@ -2629,7 +2637,7 @@ function FormComponents(_ref) {
           children: "Course Code :"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
           type: "text",
-          className: "form-control mx-3 col-md-7",
+          className: "form-control mx-3 col-md-7 ml-auto",
           value: course.code,
           onChange: function onChange(event) {
             return setCourseCode(event.target.value);
@@ -2641,7 +2649,7 @@ function FormComponents(_ref) {
           children: "Course Name :"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
           type: "text",
-          className: "form-control mx-3 col-md-7",
+          className: "form-control mx-3 col-md-7 ml-auto",
           value: course.name,
           onChange: function onChange(event) {
             return setCourseName(event.target.value);
@@ -2750,6 +2758,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+var apiLink = "http://127.0.0.1:8000/api";
 
 function CourseIndex() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
@@ -2790,7 +2799,7 @@ function CourseIndex() {
                 method: 'DELETE'
               };
               _context.next = 3;
-              return fetch("http://127.0.0.1:8000/api/courses/".concat(id), requestOptions).then(function (response) {
+              return fetch("".concat(apiLink, "/courses/").concat(id), requestOptions).then(function (response) {
                 if (response.status == 200) {
                   alert("Course Deleted Successfully");
                   setCourseSize(courseSize - 1);
@@ -2922,6 +2931,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+var apiLink = "http://127.0.0.1:8000/api";
 
 function StudentCreate() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
@@ -2976,7 +2986,7 @@ function StudentCreate() {
                 })
               };
               _context.next = 4;
-              return fetch("api/students", requestOptions).then(function (response) {
+              return fetch("".concat(apiLink, "/students"), requestOptions).then(function (response) {
                 if (response.status == 200) {
                   alert("Student Created Successfully");
                   window.location = '/student';
@@ -3007,6 +3017,152 @@ function StudentCreate() {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (StudentCreate);
+
+/***/ }),
+
+/***/ "./resources/js/components/student/edit.jsx":
+/*!**************************************************!*\
+  !*** ./resources/js/components/student/edit.jsx ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var _form_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./form_components */ "./resources/js/components/student/form_components.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+var apiLink = "http://127.0.0.1:8000/api";
+
+function StudentEdit() {
+  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useParams)(),
+      id = _useParams.id;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      studentID = _useState2[0],
+      setStudentID = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+      _useState4 = _slicedToArray(_useState3, 2),
+      studentName = _useState4[0],
+      setStudentName = _useState4[1];
+
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+      _useState6 = _slicedToArray(_useState5, 2),
+      studentEmail = _useState6[0],
+      setStudentEmail = _useState6[1];
+
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(""),
+      _useState8 = _slicedToArray(_useState7, 2),
+      studentContact = _useState8[0],
+      setStudentContact = _useState8[1];
+
+  var student = {
+    'studentID': studentID,
+    'name': studentName,
+    'email': studentEmail,
+    'contact': studentContact
+  };
+
+  function submitForm(_x) {
+    return _submitForm.apply(this, arguments);
+  }
+
+  function _submitForm() {
+    _submitForm = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(event) {
+      var requestOptions;
+      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              event.preventDefault();
+              requestOptions = {
+                method: 'PUT',
+                headers: {
+                  'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                  'studentID': studentID,
+                  'name': studentName,
+                  'email': studentEmail,
+                  'phoneNo': studentContact
+                })
+              };
+              _context.next = 4;
+              return fetch("".concat(apiLink, "/students/").concat(id), requestOptions).then(function (response) {
+                if (response.status == 200) {
+                  alert("Student Updated Successfully");
+                  window.location = '/student';
+                }
+              })["catch"](function (error) {
+                console.log(error);
+              });
+
+            case 4:
+            case "end":
+              return _context.stop();
+          }
+        }
+      }, _callee);
+    }));
+    return _submitForm.apply(this, arguments);
+  }
+
+  ;
+
+  function retrieveData() {
+    fetch("".concat(apiLink, "/students/").concat(id)).then(function (response) {
+      return response.json();
+    }).then(function (response) {
+      setStudentID(response.studentID);
+      setStudentName(response.name);
+      setStudentEmail(response.email);
+      setStudentContact(response.phoneNo);
+    });
+  }
+
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    retrieveData();
+  }, []);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_form_components__WEBPACK_IMPORTED_MODULE_2__.default, {
+    submitForm: submitForm,
+    student: student,
+    setStudentID: setStudentID,
+    setStudentName: setStudentName,
+    setStudentEmail: setStudentEmail,
+    setStudentContact: setStudentContact
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (StudentEdit);
 
 /***/ }),
 
@@ -3044,7 +3200,7 @@ function FormComponents(_ref) {
           children: "Student ID :"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
           type: "text",
-          className: "form-control mx-3 col-md-7",
+          className: "form-control mx-3 col-md-7 ml-auto",
           value: student.studentID,
           onChange: function onChange(event) {
             return setStudentID(event.target.value);
@@ -3056,7 +3212,7 @@ function FormComponents(_ref) {
           children: "Student Name :"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
           type: "text",
-          className: "form-control mx-3 col-md-7",
+          className: "form-control mx-3 col-md-7 ml-auto",
           value: student.name,
           onChange: function onChange(event) {
             return setStudentName(event.target.value);
@@ -3068,7 +3224,7 @@ function FormComponents(_ref) {
           children: "Email :"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
           type: "text",
-          className: "form-control mx-3 col-md-7",
+          className: "form-control mx-3 col-md-7 ml-auto",
           value: student.email,
           onChange: function onChange(event) {
             return setStudentEmail(event.target.value);
@@ -3080,7 +3236,7 @@ function FormComponents(_ref) {
           children: "Contact No :"
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
           type: "text",
-          className: "form-control mx-3 col-md-7",
+          className: "form-control mx-3 col-md-7 ml-auto",
           value: student.contact,
           onChange: function onChange(event) {
             return setStudentContact(event.target.value);
@@ -3142,6 +3298,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+var apiLink = "http://127.0.0.1:8000/api";
 
 function StudentIndex() {
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)([]),
@@ -3155,7 +3312,7 @@ function StudentIndex() {
       setStudentSize = _useState4[1];
 
   function fetchData() {
-    fetch("api/students").then(function (response) {
+    fetch("".concat(apiLink, "/students")).then(function (response) {
       return response.json();
     }).then(function (response) {
       setStudent(response);
@@ -3167,12 +3324,12 @@ function StudentIndex() {
     fetchData();
   }, [studentSize]);
 
-  function deleteCourse(_x) {
-    return _deleteCourse.apply(this, arguments);
+  function deleteStudent(_x) {
+    return _deleteStudent.apply(this, arguments);
   }
 
-  function _deleteCourse() {
-    _deleteCourse = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(id) {
+  function _deleteStudent() {
+    _deleteStudent = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(id) {
       var requestOptions;
       return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
         while (1) {
@@ -3182,10 +3339,10 @@ function StudentIndex() {
                 method: 'DELETE'
               };
               _context.next = 3;
-              return fetch("api/students/".concat(id), requestOptions).then(function (response) {
+              return fetch("".concat(apiLink, "/students/").concat(id), requestOptions).then(function (response) {
                 if (response.status == 200) {
                   alert("Student Deleted Successfully");
-                  setCourseSize(studentSize - 1);
+                  setStudentSize(studentSize - 1);
                 }
               })["catch"](function (error) {
                 console.log(error);
@@ -3198,7 +3355,7 @@ function StudentIndex() {
         }
       }, _callee);
     }));
-    return _deleteCourse.apply(this, arguments);
+    return _deleteStudent.apply(this, arguments);
   }
 
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
@@ -3248,13 +3405,13 @@ function StudentIndex() {
                     children: student.phoneNo
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("td", {
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-                      href: student.id,
+                      href: "student/" + student.id,
                       className: "btn btn-success btn-sm mx-3",
                       children: "Edit"
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
                       className: "btn btn-danger btn-sm",
                       onClick: function onClick() {
-                        return deleteCourse(student.id);
+                        return deleteStudent(student.id);
                       },
                       children: "Delete"
                     })]

@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import FormComponents from './form_components';
 
+const apiLink = "http://127.0.0.1:8000/api";
+
 function CourseCreate(){
 
     const [courseCode,setCourseCode] = useState("");
@@ -31,7 +33,7 @@ function CourseCreate(){
             })
         };
 
-        await fetch("http://127.0.0.1:8000/api/courses",requestOptions)
+        await fetch(`${apiLink}/courses`,requestOptions)
         .then((response)=>{
             if(response.status == 200)
             {

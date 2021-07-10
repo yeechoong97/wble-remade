@@ -37,6 +37,14 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         //
+        $student = Student::create([
+            'studentID' => $request->studentID,
+            'name' => $request->name,
+            'email' => $request->email,
+            'phoneNo' => $request->phoneNo
+        ]);
+
+        return response()->json('success', 200);
     }
 
     /**
@@ -47,7 +55,8 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        //
+        $student = Student::findorFail($id);
+        return response()->json($student,200);
     }
 
     /**
@@ -70,7 +79,10 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $student = Student::findOrFail($id);
+        $student->fill($request->all());
+        $student->save();
+        return response()->json('success',200);
     }
 
     /**
@@ -81,6 +93,8 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $student = Student::findorFail($id);
+        $student->delete();
+        return response()->json('success',200);
     }
 }

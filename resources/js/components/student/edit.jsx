@@ -1,9 +1,11 @@
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
+import { useParams } from 'react-router-dom';
 import FormComponents from './form_components';
 const apiLink = "http://127.0.0.1:8000/api";
 
-function StudentCreate(){
+function StudentEdit(){
 
+    const {id} = useParams();
     const [studentID,setStudentID] = useState("");
     const [studentName,setStudentName] = useState("");
     const [studentEmail,setStudentEmail] = useState("");
@@ -18,7 +20,7 @@ function StudentCreate(){
     async function submitForm(event){
         event.preventDefault();
         const requestOptions ={
-            method: 'POST',
+            method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
                 'studentID' : studentID,
@@ -28,11 +30,11 @@ function StudentCreate(){
             })
         };
 
-        await fetch(`${apiLink}/students`,requestOptions)
+        await fetch(`${apiLink}/students/${id}`,requestOptions)
         .then((response)=>{
             if(response.status == 200)
             {
-                alert("Student Created Successfully");
+                alert("Student Updated Successfully");
                 window.location = '/student';
             }
         })
@@ -40,6 +42,22 @@ function StudentCreate(){
             console.log(error);
         });        
     };
+
+    function retrieveData(){
+        fetch(`${apiLink}/students/${id}`)
+        .then((response)=> response.json())
+        .then((response)=> {
+            setStudentID(response.studentID);
+            setStudentName(response.name);
+            setStudentEmail(response.email);
+            setStudentContact(response.phoneNo);
+        });
+
+    }
+
+    useEffect(()=>{
+        retrieveData();
+    },[]);
 
 
     return(
@@ -56,4 +74,4 @@ function StudentCreate(){
 
 }
 
-export default StudentCreate;
+export default StudentEdit;

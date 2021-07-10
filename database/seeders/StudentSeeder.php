@@ -19,15 +19,13 @@ class StudentSeeder extends Seeder
                 'studentID' => "1801234",
                 'name'=> "Benjamin",
                 'email' => "benjamin@gmail.com",
-                'phoneNo' => "0123456789",
-                'UserID' => 1
+                'phoneNo' => "0123456789"
             ],
             [
                 'studentID' => "1801235",
                 'name'=> "Jackie",
                 'email' => "jackie@gmail.com",
-                'phoneNo' => "0123456789",
-                'UserID' => 3
+                'phoneNo' => "0123456789"
             ],
         ]);
     }

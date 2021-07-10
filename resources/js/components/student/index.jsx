@@ -1,5 +1,5 @@
 import React, {useState,useEffect} from 'react';
-
+const apiLink = "http://127.0.0.1:8000/api";
 
 function StudentIndex() {
 
@@ -7,7 +7,7 @@ function StudentIndex() {
         const [studentSize,setStudentSize] = useState(0);
     
         function fetchData(){
-            fetch("api/students")
+            fetch(`${apiLink }/students`)
             .then((response)=>response.json())
             .then((response)=> {
                 setStudent(response);
@@ -20,17 +20,17 @@ function StudentIndex() {
             fetchData();
         },[studentSize]);
 
-        async function deleteCourse(id){
+        async function deleteStudent(id){
             const requestOptions ={
                 method: 'DELETE',
             };
     
-            await fetch(`api/students/${id}`,requestOptions)
+            await fetch(`${apiLink }/students/${id}`,requestOptions)
             .then((response)=>{
                 if(response.status == 200)
                 {
                     alert("Student Deleted Successfully");
-                    setCourseSize(studentSize-1);
+                    setStudentSize(studentSize-1);
                 }
             })
             .catch((error)=>{
@@ -66,8 +66,8 @@ function StudentIndex() {
                                             <td>{student.name}</td>
                                             <td>{student.email}</td>
                                             <td>{student.phoneNo}</td>
-                                            <td><a href={student.id} className="btn btn-success btn-sm mx-3">Edit</a>
-                                            <button className="btn btn-danger btn-sm" onClick={()=> deleteCourse(student.id)}>Delete</button></td>
+                                            <td><a href={"student/"+student.id} className="btn btn-success btn-sm mx-3">Edit</a>
+                                            <button className="btn btn-danger btn-sm" onClick={()=> deleteStudent(student.id)}>Delete</button></td>
                                         </tr>)
                                         )}
                                     </tbody>

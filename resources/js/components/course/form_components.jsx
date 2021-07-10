@@ -6,11 +6,11 @@ function FormComponents({submitForm,course,setCourseCode,setCourseName,setjanInt
             <form onSubmit={submitForm}>
             <div className="px-5 py-3 form-inline">
                 <label>Course Code :</label>
-                <input type="text" className="form-control mx-3 col-md-7" value={course.code} onChange={(event)=> setCourseCode(event.target.value)} />
+                <input type="text" className="form-control mx-3 col-md-7 ml-auto" value={course.code} onChange={(event)=> setCourseCode(event.target.value)} />
             </div>
             <div className="px-5 py-3 form-inline">
                 <label>Course Name :</label>
-                <input type="text" className="form-control mx-3 col-md-7" value={course.name} onChange={(event)=> setCourseName(event.target.value)} />
+                <input type="text" className="form-control mx-3 col-md-7 ml-auto" value={course.name} onChange={(event)=> setCourseName(event.target.value)} />
             </div>
             <div className="px-5 py-3 form-inline">
                 <label>Intakes :</label>

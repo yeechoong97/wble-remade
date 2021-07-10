@@ -1,6 +1,7 @@
 import React, {useState,useEffect} from 'react';
 import { useParams } from 'react-router-dom';
 import FormComponents from './form_components';
+const apiLink = "http://127.0.0.1:8000/api";
 
 function CourseEdit(){
 
@@ -32,7 +33,7 @@ function CourseEdit(){
             })
         };
 
-        await fetch(`http://127.0.0.1:8000/api/courses/${id}`,requestOptions)
+        await fetch(`${apiLink}/courses/${id}`,requestOptions)
         .then((response)=>{
             if(response.status == 200)
             {
@@ -46,7 +47,7 @@ function CourseEdit(){
     };
 
     function retrieveData(){
-        fetch(`http://127.0.0.1:8000/api/courses/${id}`)
+        fetch(`${apiLink}/courses/${id}`)
         .then((response)=> response.json())
         .then((response)=> {
             setCourseCode(response.code);
