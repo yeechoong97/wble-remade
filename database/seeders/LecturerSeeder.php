@@ -19,15 +19,13 @@ class LecturerSeeder extends Seeder
                 'lecturerID' => "megan@megan",
                 'name'=> "Megan Tan Hui Ling",
                 'email' => "megan@gmail.com",
-                'phoneNo' => "0123456789",
-                'UserID' => 4
+                'phoneNo' => "0123456789"
             ],
             [
                 'lecturerID' => "jolin@jolin",
                 'name'=> "Jolin Kim",
                 'email' => "jolin@gmail.com",
-                'phoneNo' => "0123456789",
-                'UserID' => 5
+                'phoneNo' => "0123456789"
             ],
         ]);
     }

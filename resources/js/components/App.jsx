@@ -8,6 +8,11 @@ import CourseEdit from './course/edit';
 import StudentIndex from './student/index';
 import StudentCreate from './student/create';
 import StudentEdit from './student/edit';
+import LecturerIndex from './lecturer/index';
+import LecturerCreate from './lecturer/create';
+import LecturerEdit from './lecturer/edit';
+import ClassIndex from './class/index';
+import ClassCreate from './class/create';
 
 function App() {
     return (
@@ -21,6 +26,11 @@ function App() {
                     <Route exact path ="/student" component={StudentIndex} />
                     <Route exact path="/student/create" component={StudentCreate}/>
                     <Route exact path="/student/:id" component={StudentEdit} />
+                    <Route exact path="/lecturer" component={LecturerIndex} />
+                    <Route exact path="/lecturer/create" component={LecturerCreate} />
+                    <Route exact path="/lecturer/:id" component={LecturerEdit} />
+                    <Route exact path ="/class" component={ClassIndex} />
+                    <Route exact path="/class/create" component={ClassCreate}/>
                 </Switch>
             </>
         </Router>

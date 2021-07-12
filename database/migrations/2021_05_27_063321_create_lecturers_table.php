@@ -19,7 +19,6 @@ class CreateLecturersTable extends Migration
             $table->string("name");
             $table->string('email');
             $table->string('phoneNo');
-            $table->foreignId('UserID')->constrained();
             $table->timestamps();
         });
     }

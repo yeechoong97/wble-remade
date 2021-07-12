@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CourseController;
 use App\Http\Controllers\CourseClassController;
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\LecturerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,4 +31,8 @@ Route::delete('user/{id}', [UserController::class, 'destroy']);
 Route::resource('class',CourseClassController::class);
 Route::resource('courses', CourseController::class);
 Route::resource('students',StudentController::class);
+Route::resource('lecturers',LecturerController::class);
 
+//Course Class API
+Route::get('courseclass',[CourseClassController::class,'index']);
+Route::post('courseclass',[CourseClassController::class,'store']);

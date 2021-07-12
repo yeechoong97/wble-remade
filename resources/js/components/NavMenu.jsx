@@ -9,6 +9,7 @@ function NavMenu() {
                     <Navbar.Toggle aria-controls='responsive-navbar-nav' />
                     <Navbar.Collapse id='responsive-navbar-nav'>
                         <Nav className="ml-auto">
+                            <Nav.Link href='/class'>Class</Nav.Link>
                             <Nav.Link href='/course'>Course</Nav.Link>
                             <Nav.Link href='/student'>Student</Nav.Link>
                             <Nav.Link href='/lecturer'>Lecturer</Nav.Link>
