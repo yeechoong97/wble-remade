@@ -41,7 +41,8 @@ class StudentController extends Controller
             'studentID' => $request->studentID,
             'name' => $request->name,
             'email' => $request->email,
-            'phoneNo' => $request->phoneNo
+            'phoneNo' => $request->phoneNo,
+            'faculty' => $request->faculty
         ]);
 
         return response()->json('success', 200);

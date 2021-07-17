@@ -10,11 +10,13 @@ function LecturerEdit(){
     const [lecturerName,setLecturerName] = useState("");
     const [lecturerEmail,setLecturerEmail] = useState("");
     const [lecturerContact,setLecturerContact] = useState("");
+    const [lecturerFaculty,setLecturerFaculty] = useState("");
     const lecturer = {
         'lecturerID' : lecturerID,
         'name' : lecturerName,
         'email' : lecturerEmail,
-        'contact' : lecturerContact
+        'contact' : lecturerContact,
+        'faculty' : lecturerFaculty
     };
 
     async function submitForm(event){
@@ -26,7 +28,8 @@ function LecturerEdit(){
                 'lecturerID' : lecturerID,
                 'name' : lecturerName,
                 'email' : lecturerEmail,
-                'phoneNo' : lecturerContact
+                'phoneNo' : lecturerContact,
+                'faculty' : lecturerFaculty
             })
         };
 
@@ -51,6 +54,7 @@ function LecturerEdit(){
             setLecturerName(response.name);
             setLecturerEmail(response.email);
             setLecturerContact(response.phoneNo);
+            setLecturerFaculty(response.faculty);
         });
 
     }
@@ -68,6 +72,7 @@ function LecturerEdit(){
             setLecturerName={setLecturerName}
             setLecturerEmail={setLecturerEmail}
             setLecturerContact={setLecturerContact}
+            setLecturerFaculty= {setLecturerFaculty}
         />
     )
 

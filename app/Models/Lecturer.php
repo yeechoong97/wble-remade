@@ -14,5 +14,6 @@ class Lecturer extends Model
         'name',
         'email',
         'phoneNo',
+        'faculty',
     ];
 }

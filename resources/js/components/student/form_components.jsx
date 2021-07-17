@@ -1,6 +1,6 @@
 import React from 'react';
 
-function FormComponents({submitForm,student,setStudentID,setStudentName,setStudentEmail,setStudentContact}){
+function FormComponents({submitForm,student,setStudentID,setStudentName,setStudentEmail,setStudentContact,setStudentFaculty}){
     return(
         <div className="container border">
             <form onSubmit={submitForm}>
@@ -19,6 +19,15 @@ function FormComponents({submitForm,student,setStudentID,setStudentName,setStude
             <div className="px-5 py-3 form-inline">
                 <label>Contact No :</label>
                 <input type="text" className="form-control mx-3 col-md-7 ml-auto" value={student.contact} onChange={(event)=> setStudentContact(event.target.value)} />
+            </div>
+            <div className="px-5 py-3 form-inline">
+                <label>Faculty :</label>
+                <select className="form-control mx-3 col-md-7 ml-auto" value={student.faculty} onChange={(event)=> setStudentFaculty(event.target.value)} >
+                    <option key="lkcfes" value="LKCFES">LKCFES</option>
+                    <option key="fam" value="FAM">FAM</option>
+                    <option key="fci" value="FCI">FCI</option>
+                    <option key="cee" value="CEE">CEE</option>
+                </select>
             </div>
             <div className="px-5 py-3">
                 <a href="/student" className="btn btn-success mx-3">Back</a>

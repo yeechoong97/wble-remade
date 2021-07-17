@@ -10,11 +10,13 @@ function StudentEdit(){
     const [studentName,setStudentName] = useState("");
     const [studentEmail,setStudentEmail] = useState("");
     const [studentContact,setStudentContact] = useState("");
+    const [studentFaculty,setStudentFaculty] = useState("");
     const student = {
         'studentID' : studentID,
         'name' : studentName,
         'email' : studentEmail,
-        'contact' : studentContact
+        'contact' : studentContact,
+        'faculty' : studentFaculty
     };
 
     async function submitForm(event){
@@ -26,7 +28,8 @@ function StudentEdit(){
                 'studentID' : studentID,
                 'name' : studentName,
                 'email' : studentEmail,
-                'phoneNo' : studentContact
+                'phoneNo' : studentContact,
+                'faculty' : studentFaculty
             })
         };
 
@@ -51,6 +54,7 @@ function StudentEdit(){
             setStudentName(response.name);
             setStudentEmail(response.email);
             setStudentContact(response.phoneNo);
+            setStudentFaculty(response.faculty);
         });
 
     }
@@ -68,6 +72,7 @@ function StudentEdit(){
             setStudentName={setStudentName}
             setStudentEmail={setStudentEmail}
             setStudentContact={setStudentContact}
+            setStudentFaculty ={setStudentFaculty}
         />
     )
 

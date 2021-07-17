@@ -10,7 +10,6 @@ function ClassIndex(){
         fetch(`${apiLink }/courseclass`)
         .then((response)=>response.json())
         .then((response)=> {
-            console.log(response);
             setClass(response);
             setClassSize(response.length);
         });
@@ -19,26 +18,26 @@ function ClassIndex(){
 
     useEffect(()=>{
         fetchData();
-    },[]);
+    },[classSize]);
 
-    // async function deleteLecturer(id){
-    //     const requestOptions ={
-    //         method: 'DELETE',
-    //     };
+    function deleteClass(id){
+        const requestOptions ={
+            method: 'DELETE',
+        };
 
-    //     await fetch(`${apiLink }/lecturers/${id}`,requestOptions)
-    //     .then((response)=>{
-    //         if(response.status == 200)
-    //         {
-    //             alert("Lecturer Deleted Successfully");
-    //             setLecturerSize(lecturerSize-1);
-    //         }
-    //     })
-    //     .catch((error)=>{
-    //         console.log(error);
-    //     });    
+        fetch(`${apiLink }/courseclass/${id}`,requestOptions)
+        .then((response)=>{
+            if(response.status == 200)
+            {
+                alert("Class Deleted Successfully");
+                setClassSize(classSize-1);
+            }
+        })
+        .catch((error)=>{
+            console.log(error);
+        });    
         
-    // }
+    }
 
     return (
         <div className="container">
@@ -72,7 +71,7 @@ function ClassIndex(){
                                         <td>{courseclass.countLecturer}</td>
                                         <td>{courseclass.countStudent}</td>
                                         <td><a href={"class/"+courseclass.id} className="btn btn-success btn-sm mx-3">Edit</a>
-                                        <button className="btn btn-danger btn-sm" onClick={()=> deleteLecturer(courseclass.id)}>Delete</button></td>
+                                        <button className="btn btn-danger btn-sm" onClick={()=> deleteClass(courseclass.id)}>Delete</button></td>
                                     </tr>)
                                     )}
                                 </tbody>

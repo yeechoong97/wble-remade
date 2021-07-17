@@ -39,7 +39,7 @@ function CourseIndex() {
         }
     
         return (
-            <div className="container">
+            <div className="container my-5">
                 <div className="row justify-content-end mx-5 my-3">
                     <a className="btn btn-primary" href="/course/create">Add</a>
                     </div>

@@ -14,17 +14,6 @@ class CourseClassSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('courseclass')->insert([
-            [
-                'courseID' =>  1,
-                'semester' =>  0,
-                'year' => 2022,
-            ],
-            [
-                'courseID' =>  2,
-                'semester' =>  0,
-                'year' => 2022,
-            ],
-        ]);
+        
     }
 }

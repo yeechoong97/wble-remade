@@ -13,6 +13,7 @@ import LecturerCreate from './lecturer/create';
 import LecturerEdit from './lecturer/edit';
 import ClassIndex from './class/index';
 import ClassCreate from './class/create';
+import ClassEdit from './class/edit';
 
 function App() {
     return (
@@ -31,6 +32,7 @@ function App() {
                     <Route exact path="/lecturer/:id" component={LecturerEdit} />
                     <Route exact path ="/class" component={ClassIndex} />
                     <Route exact path="/class/create" component={ClassCreate}/>
+                    <Route exact path="/class/:id" component={ClassEdit} />
                 </Switch>
             </>
         </Router>

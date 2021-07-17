@@ -14,5 +14,6 @@ class Student extends Model
         'name',
         'email',
         'phoneNo',
+        'faculty',
     ];
 }

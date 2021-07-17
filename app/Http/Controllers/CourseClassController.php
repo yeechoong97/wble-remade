@@ -27,7 +27,7 @@ class CourseClassController extends Controller
         $currentYear = Carbon::now()->year;
         $selectedSemester= CourseClassController::checkSemester($currentMonth);
 
-        $classes = CourseClass::where('semester',$selectedSemester)->where('year',$currentYear)->get();
+        $classes = CourseClass::where('semester',$selectedSemester)->where('year',$currentYear)->orderBy('courseID','asc')->get();
         $arrayResult = [];
         foreach($classes as $class)
         {
@@ -46,6 +46,25 @@ class CourseClassController extends Controller
             array_push($arrayResult,$completeClass);
         }    
         return response()->json($arrayResult, 200);
+
+    }
+
+    public function getLecturerStudent($faculty)
+    {
+        $selectedFaculty = "";
+        if(str_contains($faculty,"UECS"))
+            $selectedFaculty = "LKCFES";
+        else if(str_contains($faculty,"UEAA"))
+            $selectedFaculty = "FAM";
+        else if(str_contains($faculty,"UEBB"))
+            $selectedFaculty = "CEE";
+        else if(str_contains($faculty,"UEDD"))
+            $selectedFaculty = "FCI";
+        
+        $student = Student::where('faculty',$selectedFaculty)->get();
+        $lecturer = Lecturer::where('faculty',$selectedFaculty)->get();
+
+        return response()->json([$student,$lecturer],200);
 
     }
 
@@ -68,16 +87,6 @@ class CourseClassController extends Controller
         return $intake;
     }
 
-    public function revertSemester($semester)
-    {
-        $intake = 1;
-        if($semester=="May")
-            $intake =2;
-        else if($semester=="Oct")
-            $intake = 3;
-        return $intake;
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -96,10 +105,9 @@ class CourseClassController extends Controller
      */
     public function store(Request $request)
     {
-        $semester = CourseClassController::revertSemester($request->semester);
         $course = CourseClass::create([
             'courseID'=> $request->courseID,
-            'semester'=> $semester,
+            'semester'=> $request->semester,
             'year' => $request->year,
         ]);
         foreach($request->students as $student)
@@ -141,7 +149,10 @@ class CourseClassController extends Controller
      */
     public function edit($id)
     {
-        //
+        $courseclass = CourseClass::findorFail($id);
+        $courseclass_lecturer = CourseClassLecturer::where('courseClassID',$id)->get();
+        $courseclass_student = CourseClassStudent::where('courseClassID',$id)->get();
+        return response()->json([$courseclass,$courseclass_lecturer,$courseclass_student],200);
     }
 
     /**
@@ -153,7 +164,25 @@ class CourseClassController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        CourseClassLecturer::where('courseClassID',$id)->delete();
+        CourseClassStudent::where('courseClassID',$id)->delete();
+        foreach($request->students as $student)
+        {
+            CourseClassStudent::create([
+                'courseClassID' => $id,
+                'studentID' => $student
+            ]);
+        }
+
+        foreach($request->lecturers as $lecturer)
+        {
+            CourseClassLecturer::create([
+                'courseClassID' => $id,
+                'lecturerID' => $lecturer
+            ]);
+        }
+
+        return response()->json('success',200);
     }
 
     /**
@@ -164,6 +193,10 @@ class CourseClassController extends Controller
      */
     public function destroy($id)
     {
-        //
+        CourseClass::where('id',$id)->delete();
+        CourseClassLecturer::where('courseClassID',$id)->delete();
+        CourseClassStudent::where('courseClassID',$id)->delete();
+
+        return response()->json('success',200);
     }
 }

@@ -36,3 +36,7 @@ Route::resource('lecturers',LecturerController::class);
 //Course Class API
 Route::get('courseclass',[CourseClassController::class,'index']);
 Route::post('courseclass',[CourseClassController::class,'store']);
+Route::get('courseclass/faculty/{faculty}',[CourseClassController::class,'getLecturerStudent']);
+Route::get('courseclass/{id}',[CourseClassController::class,'edit']);
+Route::put('courseclass/{id}',[CourseClassController::class,'update']);
+Route::delete('courseclass/{id}',[CourseClassController::class,'destroy']);

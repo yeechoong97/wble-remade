@@ -8,11 +8,13 @@ function StudentCreate(){
     const [studentName,setStudentName] = useState("");
     const [studentEmail,setStudentEmail] = useState("");
     const [studentContact,setStudentContact] = useState("");
+    const [studentFaculty,setStudentFaculty] = useState("LKCFES");
     const student = {
         'studentID' : studentID,
         'name' : studentName,
         'email' : studentEmail,
-        'contact' : studentContact
+        'contact' : studentContact,
+        'faculty' : studentFaculty,
     };
 
     async function submitForm(event){
@@ -24,7 +26,8 @@ function StudentCreate(){
                 'studentID' : studentID,
                 'name' : studentName,
                 'email' : studentEmail,
-                'phoneNo' : studentContact
+                'phoneNo' : studentContact,
+                'faculty' : studentFaculty
             })
         };
 
@@ -50,6 +53,7 @@ function StudentCreate(){
             setStudentName={setStudentName}
             setStudentEmail={setStudentEmail}
             setStudentContact={setStudentContact}
+            setStudentFaculty = {setStudentFaculty}
         />
     )
 
