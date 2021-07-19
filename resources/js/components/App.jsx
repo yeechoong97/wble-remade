@@ -14,6 +14,7 @@ import LecturerEdit from './lecturer/edit';
 import ClassIndex from './class/index';
 import ClassCreate from './class/create';
 import ClassEdit from './class/edit';
+import Login from './auth/login';
 
 function App() {
     return (
@@ -33,6 +34,7 @@ function App() {
                     <Route exact path ="/class" component={ClassIndex} />
                     <Route exact path="/class/create" component={ClassCreate}/>
                     <Route exact path="/class/:id" component={ClassEdit} />
+                    <Route exact path="/login" component={Login}/>
                 </Switch>
             </>
         </Router>

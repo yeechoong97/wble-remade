@@ -40,3 +40,24 @@ Route::get('courseclass/faculty/{faculty}',[CourseClassController::class,'getLec
 Route::get('courseclass/{id}',[CourseClassController::class,'edit']);
 Route::put('courseclass/{id}',[CourseClassController::class,'update']);
 Route::delete('courseclass/{id}',[CourseClassController::class,'destroy']);
+
+
+Route::group(['middleware' => ['jwt.auth','api-header']], function () {
+  
+    // all routes to protected resources are registered here  
+    Route::get('users/list', function(){
+        $users = App\Models\User::all();
+        
+        $response = ['success'=>true, 'data'=>$users];
+        return response()->json($response, 201);
+    });
+});
+Route::group(['middleware' => 'api-header'], function () {
+  
+    // The registration and login requests doesn't come with tokens 
+    // as users at that point have not been authenticated yet
+    // Therefore the jwtMiddleware will be exclusive of them
+
+    Route::post('user/login', [UserController::class,'login']);
+    Route::post('user/register', [UserController::class,'register']);
+});

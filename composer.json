@@ -13,7 +13,8 @@
         "laravel/framework": "^8.40",
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.2",
-        "nesbot/carbon": "^2.50"
+        "nesbot/carbon": "^2.50",
+        "tymon/jwt-auth": "^1.0"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
