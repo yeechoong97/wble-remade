@@ -10,6 +10,7 @@ use App\Models\CourseClass;
 use App\Models\CourseClassLecturer;
 use App\Models\CourseClassStudent;
 use App\Models\CompleteCourseClass;
+use App\Models\User;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 
@@ -198,5 +199,29 @@ class CourseClassController extends Controller
         CourseClassStudent::where('courseClassID',$id)->delete();
 
         return response()->json('success',200);
+    }
+
+
+    public function studentIndex($id)
+    {
+        $tempClass = [];
+        $courseEnrolled = [];
+        $user = User::findorFail($id);
+        $student = Student::where('studentID',$user->username)->first();
+        $classEnrolled = CourseClassStudent::where('studentID',$student->id)->get();
+        foreach($classEnrolled as $class)
+        {
+            $course = CourseClass::findorFail($class->courseClassID);
+            array_push($tempClass,$course->courseID);
+        }
+
+        foreach($tempClass as $class)
+        {
+            $course = Course::findOrFail($class);
+            array_push($courseEnrolled,$course);
+        }
+
+        return response()->json($courseEnrolled, 200);
+
     }
 }

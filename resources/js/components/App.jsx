@@ -2,19 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import NavMenu from './NavMenu';
-import CourseIndex from './course/index';
-import CourseCreate from './course/create';
-import CourseEdit from './course/edit';
-import StudentIndex from './student/index';
-import StudentCreate from './student/create';
-import StudentEdit from './student/edit';
-import LecturerIndex from './lecturer/index';
-import LecturerCreate from './lecturer/create';
-import LecturerEdit from './lecturer/edit';
-import ClassIndex from './class/index';
-import ClassCreate from './class/create';
-import ClassEdit from './class/edit';
+import CourseIndex from './admin/course/index';
+import CourseCreate from './admin/course/create';
+import CourseEdit from './admin/course/edit';
+import StudentIndex from './admin/student/index';
+import StudentCreate from './admin/student/create';
+import StudentEdit from './admin/student/edit';
+import LecturerIndex from './admin/lecturer/index';
+import LecturerCreate from './admin/lecturer/create';
+import LecturerEdit from './admin/lecturer/edit';
+import ClassIndex from './admin/class/index';
+import ClassCreate from './admin/class/create';
+import ClassEdit from './admin/class/edit';
 import Login from './auth/login';
+import StudentHome from './student/index';
 
 function App() {
     return (
@@ -35,6 +36,7 @@ function App() {
                     <Route exact path="/class/create" component={ClassCreate}/>
                     <Route exact path="/class/:id" component={ClassEdit} />
                     <Route exact path="/login" component={Login}/>
+                    <Route exact path="/student/student/home" component={StudentHome}/>
                 </Switch>
             </>
         </Router>

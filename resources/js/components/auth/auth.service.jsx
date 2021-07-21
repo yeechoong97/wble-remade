@@ -10,12 +10,16 @@ const loginService = (username,password)=>{
         })
     };
 
-    fetch(`${apiLink}/user/login`,requestOptions)
+    return fetch(`${apiLink}/user/login`,requestOptions)
     .then((response)=> response.json())
     .then((response)=>{
+        let isAuthenticated = false;
+        if(response.success)
+        {
             let userData ={
-                username: response.data.username,
+                role: response.data.role,
                 id :response.data.id,
+                username : response.data.username,
                 token :response.data.auth_token,
                 timestamp : new Date().toString()
             }
@@ -25,6 +29,9 @@ const loginService = (username,password)=>{
                 user: userData,
             }
             localStorage.setItem("loginState",JSON.stringify(loginState));
+            isAuthenticated = true;
+        }
+        return isAuthenticated;
     })
     .catch((error)=>{
         console.log(error);

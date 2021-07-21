@@ -38,43 +38,39 @@ class UserController extends Controller
         {
             $token = self::getToken($request->username, $request->password);
             // $user->remember_token = $token;
-            $user->save();
-            $response = ['success'=>true, 'data'=>['username'=>$user->username,'id'=>$user->id,'auth_token'=>$token,]];           
+            // $user->save();
+
+            $response = ['success'=>true, 'data'=>['role'=>$user->role,'username'=>$user->username,'id'=>$user->id,'auth_token'=>$token,]];           
         }
         else 
-          $response = ['success'=>false, 'data'=>'Record doesnt exists'];
-      
+        $response = ['success'=>false, 'data'=>'Record doesnt exists'];
 
         return response()->json($response, 201);
     }
-    public function register(Request $request)
+
+    public function register($request)
     { 
         $payload = [
-            'password'=>\Hash::make($request->password),
-            'email'=>$request->email,
-            'name'=>$request->name,
-            'auth_token'=> ''
+            'username'=>$request['username'],
+            'password'=> Hash::make($request['password']),
+            'role' => $request['role'],
         ];
-                  
-        $user = new \App\User($payload);
+                
+        $user = User::create($payload);
         if ($user->save())
         {
             
-            $token = self::getToken($request->email, $request->password); // generate user token
+            // $token = self::getToken($request->email, $request->password); // generate user token
             
-            if (!is_string($token))  return response()->json(['success'=>false,'data'=>'Token generation failed'], 201);
+            // if (!is_string($token))  return response()->json(['success'=>false,'data'=>'Token generation failed'], 201);
             
-            $user = \App\User::where('email', $request->email)->get()->first();
-            
-            $user->auth_token = $token; // update user token
-            
-            $user->save();
-            
-            $response = ['success'=>true, 'data'=>['username'=>$user->username,'id'=>$user->id,'email'=>$request->email,'auth_token'=>$token]];        
+            // $user = User::where('email', $request->email)->get()->first();
+                        
+            // $response = ['success'=>true, 'data'=>['username'=>$user->username,'id'=>$user->id,'email'=>$request->email,'auth_token'=>$token]]; 
+            $response = ['success'=> true, 'data'=> 'Registration is successful'];       
         }
         else
             $response = ['success'=>false, 'data'=>'Couldnt register user'];
-        
         
         return response()->json($response, 201);
     }
@@ -91,9 +87,7 @@ class UserController extends Controller
 
     public function update(Request $req) {
         $user = User::find($req->id);
-        $user->userId = $req->userId;
-        $user->name = $req->name;
-        $user->email = $req->email;
+        $user->username = $req->username;
         $user->role = $req->role;
         $user->password = Hash::make($req->password);
         $user->save();

@@ -4,15 +4,25 @@ import AuthService from '../components/auth/auth.service';
 
 function NavMenu() {
 
-    const [loginState,setLoginState] = useState(localStorage.getItem("loginState"));
+    const [currentUser,setCurrentUser] = useState(undefined);
+    const [adminRole,setAdminRole] = useState(false);
+    const [lecturerRole,setLecturerRole] = useState(false);
+    const [studentRole,setStudentRole] = useState(false);
 
     useEffect(()=>{
-
-    },[loginState])
+        const user = AuthService.getCurrentUser();
+        if(user)
+        {
+            setCurrentUser(user);
+            setAdminRole(user.user.role == "admin");
+            setLecturerRole(user.user.role == "lecturer");
+            setStudentRole(user.user.role=="student");
+        }
+    },[]);
 
     function userLogout(){
         AuthService.logout();
-        setLoginState(localStorage.getItem("loginState"));
+        window.location = '/login';
     }
 
 
@@ -23,13 +33,29 @@ function NavMenu() {
                 <Container>
                     <Navbar.Toggle aria-controls='responsive-navbar-nav' />
                     <Navbar.Collapse id='responsive-navbar-nav'>
-                            {loginState ? (
+                            {currentUser ? (
                             <Nav className="ml-auto">
-                            <Nav.Link href='/class'>Class</Nav.Link>
-                            <Nav.Link href='/course'>Course</Nav.Link>
-                            <Nav.Link href='/student'>Student</Nav.Link>
-                            <Nav.Link href='/lecturer'>Lecturer</Nav.Link>
-                            <Nav.Link href="#" onClick={userLogout}>Logout</Nav.Link>
+                                <Nav.Link href="#">{currentUser.user.username}</Nav.Link>
+                                {adminRole && (
+                                    <>
+                                    <Nav.Link href='/class'>Class</Nav.Link>
+                                    <Nav.Link href='/course'>Course</Nav.Link>
+                                    <Nav.Link href='/student'>Student</Nav.Link>
+                                    <Nav.Link href='/lecturer'>Lecturer</Nav.Link>
+                                    <Nav.Link href="#" onClick={userLogout}>Logout</Nav.Link>
+                                    </>
+                                )}
+                                {lecturerRole && (
+                                    <>
+                                    <Nav.Link href="#" onClick={userLogout}>Logout</Nav.Link>
+                                    </>
+                                )}
+                                {studentRole && (
+                                    <>
+                                    <Nav.Link href="/student/student/home">Home</Nav.Link>
+                                    <Nav.Link href="#" onClick={userLogout}>Logout</Nav.Link>
+                                    </>
+                                )}
                             </Nav>
                             )
                             :

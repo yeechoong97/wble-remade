@@ -27,7 +27,7 @@ function StudentCreate(){
                 'name' : studentName,
                 'email' : studentEmail,
                 'phoneNo' : studentContact,
-                'faculty' : studentFaculty
+                'faculty' : studentFaculty,
             })
         };
 

@@ -41,6 +41,9 @@ Route::get('courseclass/{id}',[CourseClassController::class,'edit']);
 Route::put('courseclass/{id}',[CourseClassController::class,'update']);
 Route::delete('courseclass/{id}',[CourseClassController::class,'destroy']);
 
+//Student Access Index
+Route::get('courseclass/student/{id}',[CourseClassController::class,'studentIndex']);
+
 
 Route::group(['middleware' => ['jwt.auth','api-header']], function () {
   

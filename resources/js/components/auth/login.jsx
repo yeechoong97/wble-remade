@@ -3,7 +3,7 @@ import AuthService from './auth.service';
 
 const apiLink = "http://127.0.0.1:8000/api";
 
-function Login(){
+function Login(props){
 
     const [username,setUsername] = useState("");
     const [password,setPassword] = useState("");
@@ -11,8 +11,13 @@ function Login(){
 
     async function loginSubmit(event){
         event.preventDefault();
-        await AuthService.loginService(username,password);
-        window.location.reload();
+        var result = await AuthService.loginService(username,password);
+        if(result)
+        {
+            props.history.push('/');
+            window.location.reload();
+        }
+
     }
 
 
@@ -20,8 +25,8 @@ function Login(){
         <div className="container my-5 border px-5 py-5">
             <form onSubmit={loginSubmit}>
             <div className="form-group">
-                <label>ID</label>
-                <input type="text" name="id" className="form-control" onChange={(event)=> setUsername(event.target.value)}/>
+                <label>Username</label>
+                <input type="text" name="username" className="form-control" onChange={(event)=> setUsername(event.target.value)}/>
             </div>
             <div className="form-group">
                 <label>Password</label>

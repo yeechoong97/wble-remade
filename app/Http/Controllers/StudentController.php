@@ -4,9 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use App\Http\Controllers\UserController;
 
 class StudentController extends Controller
 {
+    protected $userController;
+    
+    public function __construct(UserController $userController)
+    {
+        $this->userController = $userController;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -36,7 +44,7 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
         $student = Student::create([
             'studentID' => $request->studentID,
             'name' => $request->name,
@@ -44,6 +52,14 @@ class StudentController extends Controller
             'phoneNo' => $request->phoneNo,
             'faculty' => $request->faculty
         ]);
+
+        $this->userController->register(
+            [
+                'username' => $request->studentID,
+                'password' => 'password',
+                'role' => 'student'
+            ]
+        );
 
         return response()->json('success', 200);
     }

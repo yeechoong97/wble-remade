@@ -9,6 +9,13 @@ use App\Models\Lecturer;
 
 class LecturerController extends Controller
 {
+
+    protected $userController;
+    
+    public function __construct(UserController $userController)
+    {
+        $this->userController = $userController;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -46,6 +53,15 @@ class LecturerController extends Controller
             'phoneNo' => $request->phoneNo,
             'faculty' => $request->faculty
         ]);
+
+        $this->userController->register(
+            [
+                'username' => $request->lecturerID,
+                'password' => 'password',
+                'role' => 'lecturer'
+            ]
+        );
+
         return response()->json('success',200);
     }
 
