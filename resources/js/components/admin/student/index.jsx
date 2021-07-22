@@ -50,7 +50,7 @@ function StudentIndex() {
         return (
             <div className="container my-5">
                 <div className="row justify-content-end mx-5 my-3">
-                    <a className="btn btn-primary" href="/student/create">Add</a>
+                    <a className="btn btn-primary" href="/admin/student/create">Add</a>
                     </div>
                 <div className="row">
                     <div className="col-md-12">
@@ -76,7 +76,7 @@ function StudentIndex() {
                                             <td>{student.email}</td>
                                             <td>{student.phoneNo}</td>
                                             <td>{student.faculty}</td>
-                                            <td><a href={"student/"+student.id} className="btn btn-success btn-sm mx-3">Edit</a>
+                                            <td><a href={"admin/student/"+student.id} className="btn btn-success btn-sm mx-3">Edit</a>
                                             <button className="btn btn-danger btn-sm" onClick={()=> deleteStudent(student.id)}>Delete</button></td>
                                         </tr>)
                                         )}

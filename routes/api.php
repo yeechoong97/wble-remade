@@ -43,6 +43,7 @@ Route::delete('courseclass/{id}',[CourseClassController::class,'destroy']);
 
 //Student Access Index
 Route::get('courseclass/student/{id}',[CourseClassController::class,'studentIndex']);
+Route::get('courseclass/student/course/{id}',[CourseClassController::class,'courseDetails']);
 
 
 Route::group(['middleware' => ['jwt.auth','api-header']], function () {

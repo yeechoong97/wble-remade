@@ -38,7 +38,7 @@ function CourseCreate(){
             if(response.status == 200)
             {
                 alert("Course Created Successfully");
-                window.location = '/course';
+                window.location = '/admin/course';
             }
         })
         .catch((error)=>{

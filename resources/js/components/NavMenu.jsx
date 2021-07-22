@@ -38,10 +38,10 @@ function NavMenu() {
                                 <Nav.Link href="#">{currentUser.user.username}</Nav.Link>
                                 {adminRole && (
                                     <>
-                                    <Nav.Link href='/class'>Class</Nav.Link>
-                                    <Nav.Link href='/course'>Course</Nav.Link>
-                                    <Nav.Link href='/student'>Student</Nav.Link>
-                                    <Nav.Link href='/lecturer'>Lecturer</Nav.Link>
+                                    <Nav.Link href='/admin/class'>Class</Nav.Link>
+                                    <Nav.Link href='/admin/course'>Course</Nav.Link>
+                                    <Nav.Link href='/admin/student'>Student</Nav.Link>
+                                    <Nav.Link href='/admin/lecturer'>Lecturer</Nav.Link>
                                     <Nav.Link href="#" onClick={userLogout}>Logout</Nav.Link>
                                     </>
                                 )}
@@ -52,7 +52,7 @@ function NavMenu() {
                                 )}
                                 {studentRole && (
                                     <>
-                                    <Nav.Link href="/student/student/home">Home</Nav.Link>
+                                    <Nav.Link href="/student/index">Home</Nav.Link>
                                     <Nav.Link href="#" onClick={userLogout}>Logout</Nav.Link>
                                     </>
                                 )}

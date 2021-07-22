@@ -2185,8 +2185,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var _NavMenu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./NavMenu */ "./resources/js/components/NavMenu.jsx");
 /* harmony import */ var _admin_course_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./admin/course/index */ "./resources/js/components/admin/course/index.jsx");
 /* harmony import */ var _admin_course_create__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./admin/course/create */ "./resources/js/components/admin/course/create.jsx");
@@ -2202,7 +2202,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _admin_class_edit__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./admin/class/edit */ "./resources/js/components/admin/class/edit.jsx");
 /* harmony import */ var _auth_login__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./auth/login */ "./resources/js/components/auth/login.jsx");
 /* harmony import */ var _student_index__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./student/index */ "./resources/js/components/student/index.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _student_course_details__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./student/course_details */ "./resources/js/components/student/course_details.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -2226,65 +2228,69 @@ __webpack_require__.r(__webpack_exports__);
 
 
 function App() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_18__.BrowserRouter, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__.Fragment, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__.jsx)(_NavMenu__WEBPACK_IMPORTED_MODULE_2__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Switch, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.BrowserRouter, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(_NavMenu__WEBPACK_IMPORTED_MODULE_2__.default, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Switch, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
           exact: true,
-          path: "/course",
+          path: "/admin/course",
           component: _admin_course_index__WEBPACK_IMPORTED_MODULE_3__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
           exact: true,
-          path: "/course/create",
+          path: "/admin/course/create",
           component: _admin_course_create__WEBPACK_IMPORTED_MODULE_4__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
           exact: true,
-          path: "/course/:id",
+          path: "/admin/course/:id",
           component: _admin_course_edit__WEBPACK_IMPORTED_MODULE_5__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
           exact: true,
-          path: "/student",
+          path: "/admin/student",
           component: _admin_student_index__WEBPACK_IMPORTED_MODULE_6__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
           exact: true,
-          path: "/student/create",
+          path: "/admin/student/create",
           component: _admin_student_create__WEBPACK_IMPORTED_MODULE_7__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
           exact: true,
-          path: "/student/:id",
+          path: "/admin/student/:id",
           component: _admin_student_edit__WEBPACK_IMPORTED_MODULE_8__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
           exact: true,
-          path: "/lecturer",
+          path: "/admin/lecturer",
           component: _admin_lecturer_index__WEBPACK_IMPORTED_MODULE_9__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
           exact: true,
-          path: "/lecturer/create",
+          path: "/admin/lecturer/create",
           component: _admin_lecturer_create__WEBPACK_IMPORTED_MODULE_10__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
           exact: true,
-          path: "/lecturer/:id",
+          path: "/admin/lecturer/:id",
           component: _admin_lecturer_edit__WEBPACK_IMPORTED_MODULE_11__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
           exact: true,
-          path: "/class",
+          path: "/admin/class",
           component: _admin_class_index__WEBPACK_IMPORTED_MODULE_12__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
           exact: true,
-          path: "/class/create",
+          path: "/admin/class/create",
           component: _admin_class_create__WEBPACK_IMPORTED_MODULE_13__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
           exact: true,
-          path: "/class/:id",
+          path: "/admin/class/:id",
           component: _admin_class_edit__WEBPACK_IMPORTED_MODULE_14__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
           exact: true,
           path: "/login",
           component: _auth_login__WEBPACK_IMPORTED_MODULE_15__.default
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_19__.Route, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
           exact: true,
-          path: "/student/student/home",
+          path: "/student/index",
           component: _student_index__WEBPACK_IMPORTED_MODULE_16__.default
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_20__.Route, {
+          exact: true,
+          path: "/student/course/:id",
+          component: _student_course_details__WEBPACK_IMPORTED_MODULE_17__.default
         })]
       })]
     })
@@ -2294,8 +2300,8 @@ function App() {
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
 
 if (document.getElementById('example')) {
-  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.StrictMode, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_17__.jsx)(App, {})
+  react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(react__WEBPACK_IMPORTED_MODULE_0__.StrictMode, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_18__.jsx)(App, {})
   }), document.getElementById('example'));
 }
 
@@ -2396,16 +2402,16 @@ function NavMenu() {
               children: currentUser.user.username
             }), adminRole && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__.default.Link, {
-                href: "/class",
+                href: "/admin/class",
                 children: "Class"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__.default.Link, {
-                href: "/course",
+                href: "/admin/course",
                 children: "Course"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__.default.Link, {
-                href: "/student",
+                href: "/admin/student",
                 children: "Student"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__.default.Link, {
-                href: "/lecturer",
+                href: "/admin/lecturer",
                 children: "Lecturer"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__.default.Link, {
                 href: "#",
@@ -2420,7 +2426,7 @@ function NavMenu() {
               })
             }), studentRole && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__.default.Link, {
-                href: "/student/student/home",
+                href: "/student/index",
                 children: "Home"
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_bootstrap__WEBPACK_IMPORTED_MODULE_5__.default.Link, {
                 href: "#",
@@ -2673,7 +2679,7 @@ function ClassCreate() {
               return fetch("".concat(apiLink, "/courseclass"), requestOptions).then(function (response) {
                 if (response.status == 200) {
                   alert("Class Created Successfully");
-                  window.location = '/class';
+                  window.location = '/admin/class';
                 }
               })["catch"](function (error) {
                 console.log(error);
@@ -3015,7 +3021,7 @@ function ClassEdit() {
     fetch("".concat(apiLink, "/class/").concat(id), requestOptions).then(function (response) {
       if (response.status == 200) {
         alert("Class Updated Successfully");
-        window.location = '/class';
+        window.location = '/admin/class';
       }
     })["catch"](function (error) {
       console.log(error);
@@ -3344,7 +3350,7 @@ function ClassIndex() {
       className: "row justify-content-end mx-5 my-3",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
         className: "btn btn-primary",
-        href: "/class/create",
+        href: "/admin/class/create",
         children: "Add"
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
@@ -3393,7 +3399,7 @@ function ClassIndex() {
                     children: courseclass.countStudent
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("td", {
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
-                      href: "class/" + courseclass.id,
+                      href: "/admin/class/" + courseclass.id,
                       className: "btn btn-success btn-sm mx-3",
                       children: "Edit"
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
@@ -3520,7 +3526,7 @@ function CourseCreate() {
               return fetch("".concat(apiLink, "/courses"), requestOptions).then(function (response) {
                 if (response.status == 200) {
                   alert("Course Created Successfully");
-                  window.location = '/course';
+                  window.location = '/admin/course';
                 }
               })["catch"](function (error) {
                 console.log(error);
@@ -3659,7 +3665,7 @@ function CourseEdit() {
               return fetch("".concat(apiLink, "/courses/").concat(id), requestOptions).then(function (response) {
                 if (response.status == 200) {
                   alert("Course Updated Successfully");
-                  window.location = '/course';
+                  window.location = '/admin/course';
                 }
               })["catch"](function (error) {
                 console.log(error);
@@ -3929,7 +3935,7 @@ function CourseIndex() {
       className: "row justify-content-end mx-5 my-3",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
         className: "btn btn-primary",
-        href: "/course/create",
+        href: "/admin/course/create",
         children: "Add"
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
@@ -3974,7 +3980,7 @@ function CourseIndex() {
                     children: course.octIntake == 1 ? "Yes" : "No"
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("td", {
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-                      href: "course/" + course.id,
+                      href: "/admin/course/" + course.id,
                       className: "btn btn-success btn-sm mx-3",
                       children: "Edit"
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
@@ -4101,7 +4107,7 @@ function LecturerCreate() {
               return fetch("".concat(apiLink, "/lecturers"), requestOptions).then(function (response) {
                 if (response.status == 200) {
                   alert("lecturer Created Successfully");
-                  window.location = '/lecturer';
+                  window.location = '/admin/lecturer';
                 }
               })["catch"](function (error) {
                 console.log(error);
@@ -4240,7 +4246,7 @@ function LecturerEdit() {
               return fetch("".concat(apiLink, "/lecturers/").concat(id), requestOptions).then(function (response) {
                 if (response.status == 200) {
                   alert("Lecturer Updated Successfully");
-                  window.location = '/Lecturer';
+                  window.location = '/admin/lecturer';
                 }
               })["catch"](function (error) {
                 console.log(error);
@@ -4511,7 +4517,7 @@ function LecturerIndex() {
       className: "row justify-content-end mx-5 my-3",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
         className: "btn btn-primary",
-        href: "/lecturer/create",
+        href: "/admin/lecturer/create",
         children: "Add"
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
@@ -4556,7 +4562,7 @@ function LecturerIndex() {
                     children: lecturer.faculty
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("td", {
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-                      href: "lecturer/" + lecturer.id,
+                      href: "admin/lecturer/" + lecturer.id,
                       className: "btn btn-success btn-sm mx-3",
                       children: "Edit"
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
@@ -4683,7 +4689,7 @@ function StudentCreate() {
               return fetch("".concat(apiLink, "/students"), requestOptions).then(function (response) {
                 if (response.status == 200) {
                   alert("Student Created Successfully");
-                  window.location = '/student';
+                  window.location = '/admin/student';
                 }
               })["catch"](function (error) {
                 console.log(error);
@@ -4822,7 +4828,7 @@ function StudentEdit() {
               return fetch("".concat(apiLink, "/students/").concat(id), requestOptions).then(function (response) {
                 if (response.status == 200) {
                   alert("Student Updated Successfully");
-                  window.location = '/student';
+                  window.location = '/admin/student';
                 }
               })["catch"](function (error) {
                 console.log(error);
@@ -5100,7 +5106,7 @@ function StudentIndex() {
       className: "row justify-content-end mx-5 my-3",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
         className: "btn btn-primary",
-        href: "/student/create",
+        href: "/admin/student/create",
         children: "Add"
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
@@ -5145,7 +5151,7 @@ function StudentIndex() {
                     children: student.faculty
                   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("td", {
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
-                      href: "student/" + student.id,
+                      href: "admin/student/" + student.id,
                       className: "btn btn-success btn-sm mx-3",
                       children: "Edit"
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
@@ -5365,6 +5371,78 @@ function Login(props) {
 
 /***/ }),
 
+/***/ "./resources/js/components/student/course_details.jsx":
+/*!************************************************************!*\
+  !*** ./resources/js/components/student/course_details.jsx ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
+
+
+
+var apiLink = "http://127.0.0.1:8000/api";
+
+function CourseDetails() {
+  var _useParams = (0,react_router__WEBPACK_IMPORTED_MODULE_2__.useParams)(),
+      id = _useParams.id;
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      _useState2 = _slicedToArray(_useState, 2),
+      course = _useState2[0],
+      setCourse = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      week = _useState4[0],
+      setWeek = _useState4[1];
+
+  function retrieveData() {
+    fetch("".concat(apiLink, "/courseclass/student/course/").concat(id)).then(function (response) {
+      return response.json();
+    }).then(function (response) {
+      setCourse(response[0]);
+      setWeek(response[1]);
+    });
+  }
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    retrieveData();
+  }, []);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "container",
+    children: week.map(function (item, index) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        children: ["Week ", index + 1, " ", item]
+      });
+    })
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CourseDetails);
+
+/***/ }),
+
 /***/ "./resources/js/components/student/index.jsx":
 /*!***************************************************!*\
   !*** ./resources/js/components/student/index.jsx ***!
@@ -5461,7 +5539,7 @@ function StudentHome() {
       return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
         className: "row",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("a", {
-          href: "#",
+          href: "/student/course/" + course.id,
           className: "text-primary",
           children: [course.code, " ", course.name]
         })

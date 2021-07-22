@@ -183,7 +183,7 @@ function ClassEdit(){
             if(response.status == 200)
             {
                 alert("Class Updated Successfully");
-                window.location = '/class';
+                window.location = '/admin/class';
             }
         })
         .catch((error)=>{

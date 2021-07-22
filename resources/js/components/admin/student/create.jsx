@@ -36,7 +36,7 @@ function StudentCreate(){
             if(response.status == 200)
             {
                 alert("Student Created Successfully");
-                window.location = '/student';
+                window.location = '/admin/student';
             }
         })
         .catch((error)=>{

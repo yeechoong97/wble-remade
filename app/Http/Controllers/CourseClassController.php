@@ -222,6 +222,21 @@ class CourseClassController extends Controller
         }
 
         return response()->json($courseEnrolled, 200);
+    }
+
+    public function courseDetails($id)
+    {
+        $course = Course::findorFail($id);
+        $weekArray = [];
+        $firstWeek = Carbon::create(2021, 5 ,1,12,0,0);
+        array_push($weekArray,$firstWeek);
+        for($i = 1;$i<14;$i++)
+        {
+            $tempDay = new Carbon('2021-05-01');
+            $tempDay->addDays($i*7);
+            array_push($weekArray,$tempDay);
+        }
+        return response()->json([$course,$weekArray],200);
 
     }
 }

@@ -38,7 +38,7 @@ function CourseEdit(){
             if(response.status == 200)
             {
                 alert("Course Updated Successfully");
-                window.location = '/course';
+                window.location = '/admin/course';
             }
         })
         .catch((error)=>{

@@ -41,7 +41,7 @@ function CourseIndex() {
         return (
             <div className="container my-5">
                 <div className="row justify-content-end mx-5 my-3">
-                    <a className="btn btn-primary" href="/course/create">Add</a>
+                    <a className="btn btn-primary" href="/admin/course/create">Add</a>
                     </div>
                 <div className="row">
                     <div className="col-md-12">
@@ -67,7 +67,7 @@ function CourseIndex() {
                                             <td>{course.janIntake==1? "Yes" : "No"}</td>
                                             <td>{course.mayIntake==1? "Yes" : "No"}</td>
                                             <td>{course.octIntake==1? "Yes" : "No"}</td>
-                                            <td><a href={"course/"+course.id} className="btn btn-success btn-sm mx-3">Edit</a>
+                                            <td><a href={"/admin/course/"+course.id} className="btn btn-success btn-sm mx-3">Edit</a>
                                             <button className="btn btn-danger btn-sm" onClick={()=> deleteCourse(course.id)}>Delete</button></td>
                                         </tr>)
                                         )}

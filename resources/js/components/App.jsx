@@ -16,6 +16,7 @@ import ClassCreate from './admin/class/create';
 import ClassEdit from './admin/class/edit';
 import Login from './auth/login';
 import StudentHome from './student/index';
+import CourseDetails from './student/course_details';
 
 function App() {
     return (
@@ -23,20 +24,21 @@ function App() {
             <>
                 <NavMenu/>
                 <Switch>
-                    <Route exact path ="/course" component={CourseIndex}/>
-                    <Route exact path="/course/create" component={CourseCreate}/>
-                    <Route exact path="/course/:id" component={CourseEdit}/>
-                    <Route exact path ="/student" component={StudentIndex} />
-                    <Route exact path="/student/create" component={StudentCreate}/>
-                    <Route exact path="/student/:id" component={StudentEdit} />
-                    <Route exact path="/lecturer" component={LecturerIndex} />
-                    <Route exact path="/lecturer/create" component={LecturerCreate} />
-                    <Route exact path="/lecturer/:id" component={LecturerEdit} />
-                    <Route exact path ="/class" component={ClassIndex} />
-                    <Route exact path="/class/create" component={ClassCreate}/>
-                    <Route exact path="/class/:id" component={ClassEdit} />
+                    <Route exact path ="/admin/course" component={CourseIndex}/>
+                    <Route exact path="/admin/course/create" component={CourseCreate}/>
+                    <Route exact path="/admin/course/:id" component={CourseEdit}/>
+                    <Route exact path ="/admin/student" component={StudentIndex} />
+                    <Route exact path="/admin/student/create" component={StudentCreate}/>
+                    <Route exact path="/admin/student/:id" component={StudentEdit} />
+                    <Route exact path="/admin/lecturer" component={LecturerIndex} />
+                    <Route exact path="/admin/lecturer/create" component={LecturerCreate} />
+                    <Route exact path="/admin/lecturer/:id" component={LecturerEdit} />
+                    <Route exact path ="/admin/class" component={ClassIndex} />
+                    <Route exact path="/admin/class/create" component={ClassCreate}/>
+                    <Route exact path="/admin/class/:id" component={ClassEdit} />
                     <Route exact path="/login" component={Login}/>
-                    <Route exact path="/student/student/home" component={StudentHome}/>
+                    <Route exact path="/student/index" component={StudentHome}/>
+                    <Route exact path="/student/course/:id" component={CourseDetails} />
                 </Switch>
             </>
         </Router>

@@ -38,7 +38,7 @@ function StudentEdit(){
             if(response.status == 200)
             {
                 alert("Student Updated Successfully");
-                window.location = '/student';
+                window.location = '/admin/student';
             }
         })
         .catch((error)=>{

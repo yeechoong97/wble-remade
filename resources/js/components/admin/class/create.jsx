@@ -148,7 +148,7 @@ function ClassCreate(){
             if(response.status == 200)
             {
                 alert("Class Created Successfully");
-                window.location = '/class';
+                window.location = '/admin/class';
             }
         })
         .catch((error)=>{

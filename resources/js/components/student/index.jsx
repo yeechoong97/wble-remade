@@ -31,7 +31,7 @@ function StudentHome(){
             <div className="row">Student Home</div>
             {courseEnrolled.map((course)=>(
                 <div className="row" key={course.id}>
-                    <a href="#" className="text-primary">{course.code} {course.name}</a>
+                    <a href={"/student/course/" + course.id} className="text-primary">{course.code} {course.name}</a>
                 </div>
             ))}
         </div>

@@ -36,7 +36,7 @@ function LecturerCreate(){
             if(response.status == 200)
             {
                 alert("lecturer Created Successfully");
-                window.location = '/lecturer';
+                window.location = '/admin/lecturer';
             }
         })
         .catch((error)=>{

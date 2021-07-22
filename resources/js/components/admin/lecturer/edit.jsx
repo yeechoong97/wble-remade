@@ -38,7 +38,7 @@ function LecturerEdit(){
             if(response.status == 200)
             {
                 alert("Lecturer Updated Successfully");
-                window.location = '/Lecturer';
+                window.location = '/admin/lecturer';
             }
         })
         .catch((error)=>{
